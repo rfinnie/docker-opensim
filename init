@@ -4,10 +4,10 @@ set -e
 
 if [ -x /srv/opensim/run_opensim ]; then
     cd /srv/opensim
-    exec setuidgid opensim /srv/opensim/run_opensim
+    exec /srv/opensim/run_opensim
 elif [ -e /srv/opensim/bin/OpenSim.exe ]; then
     cd /srv/opensim/bin
-    exec setuidgid opensim mono OpenSim.exe
+    exec mono OpenSim.exe
 else
     echo "The opensim user is:"
     echo "    $(id opensim)"

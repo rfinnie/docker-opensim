@@ -7,4 +7,5 @@ RUN /tmp/container-build && rm -f /tmp/container-build
 EXPOSE 9000/tcp
 EXPOSE 9000/udp
 
+USER opensim
 CMD ["/init"]
