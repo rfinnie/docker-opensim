@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+set -x
+
+export DEBIAN_FRONTEND=noninteractive
+apt-get update -y
+apt-get install -y --no-install-recommends \
+  mono-runtime \
+  mono-mcs \
+  binfmt-support \
+  libmono-system-web4.0-cil \
+  libmono-microsoft-csharp4.0-cil \
+  daemontools
+apt-get clean
+adduser --system --home /srv/opensim --no-create-home --quiet opensim
+mkdir -p /srv/opensim
+chown opensim:nogroup /srv/opensim
