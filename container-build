@@ -13,6 +13,4 @@ apt-get install -y --no-install-recommends \
   libmono-microsoft-csharp4.0-cil \
   daemontools
 apt-get clean
-adduser --system --home /srv/opensim --no-create-home --quiet opensim
-mkdir -p /srv/opensim
-chown opensim:nogroup /srv/opensim
+adduser --system --home /srv/opensim --group --quiet opensim
